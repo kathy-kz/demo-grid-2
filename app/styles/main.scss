@@ -1,0 +1,112 @@
+$icon-font-path: '../fonts/';
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+$white: #ffffff;
+$normal: #303030;
+$dark: #353535;
+$accent: #f9b91b;
+
+$bold: 500;
+$bolder: 700;
+$line-height: 1.1;
+
+$font-size-base:          14px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+* {
+  box-sizing: border-box;
+  
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+h1, h2, h3, h4, h5, p {
+  font-family: 'Helvetica', Arial;
+  line-height: $line-height;
+  font-weight: $bold;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+}
+
+h6 {
+  font-size: $font-size-h6;
+}
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 2fr 1fr 2fr 1fr 1fr 1fr 100px;
+
+  .main-header {
+    grid-area: 1 / 1 / 2 / 2;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.125fr 0.375fr;
+    grid-template-rows: 1fr 3fr 1.5fr;
+
+    
+  }
+
+  .description {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .portfolio {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+
+  .pricing {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+
+  .feature {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+
+  .nav-slider {
+    grid-area: 6 / 1 / 7 / 2;
+  }
+
+  .banner-bottom {
+    grid-area: 7 / 1 / 8 / 2;
+  }
+
+  .contact {
+    grid-area: 8 / 1 / 9 / 2;
+  }
+
+  .main-footer {
+    grid-area: 9 / 1 / 10 / 2;
+  }
+}
