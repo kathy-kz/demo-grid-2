@@ -70,20 +70,299 @@ h6 {
 
   .main-header {
     grid-area: 1 / 1 / 2 / 2;
+    background-image: url('../images/header-bg.jpg');
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgba(black, 0.3);
+
+    color: $white;
 
     display: grid;
     grid-template-columns: 1fr 2fr 1.125fr 0.375fr;
     grid-template-rows: 1fr 3fr 1.5fr;
+    align-items: center;
 
-    
+    .logo {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+
+      img {
+        width: 150px;
+        padding: 20px;
+      }
+    }
+
+    .info {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+      justify-self: end;
+      text-align: right;
+
+      ul {
+        margin-top: 10px;
+        li {
+          list-style: none;
+          color: $white;
+        }
+      }
+    }
+
+    .nav {
+      grid-column: 4 / 5;
+      grid-row: 1 / 2;
+      justify-self: center;
+
+      .nav-link {
+        height: 45px;
+        width: 50px;
+        padding: 10px 14px 10px 14px;
+        -webkit-transition: back 0.2s ease-out;
+        text-decoration: none;
+        display: block;
+        position: relative;
+        border: 1px solid $white;
+        
+        .c-line {
+          width: 20px;
+          display: block;
+          height: 2px;
+          padding: 0px;
+          margin: 5px 0;
+          background-color: $white;
+
+          &:first-child {
+            margin-top: 3px;
+          }
+        }
+      }
+
+      .main-nav {
+        ul {
+          overflow: hidden;
+          margin: 0 auto;
+          padding: 0;
+          height: 0;
+          transition: all ease-in-out 0.4s;
+
+          &.open {
+            height: auto;
+          }
+
+          li {
+            width: 100%;
+            margin: 0;
+            border-bottom: 1px solid #f2f2f2;
+            display: block;
+
+            a {
+              padding: 10px;
+              display: block;
+              text-decoration: none;
+              color: $dark;
+              transition: all ease-in-out 0.3s;
+
+              &:hover {
+                color: $dark;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .header-content {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+
+      .header-title {
+        font-weight: $bolder;
+      }
+
+      .header-p {
+        font-size: $font-size-large;
+        padding: 10px 0 15px;
+      }
+
+      .header-link {
+        color: $white;
+        padding: 10px 22px;
+        background-color: $accent;
+        margin-top: 20px;
+        position: relative;
+        text-decoration: none;
+        transition: all ease-in-out 0.1s;
+
+        &:hover {
+          background-color: darken($accent, 10);
+        }
+
+      }
+    }
+
+    .header-bottom-list {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      list-style: none;
+      justify-self: start;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        padding: 5px 30px 5px 0px;
+
+        &::before {
+          content: "• ";
+          color: $accent; /* or whatever color you prefer */
+        }
+      }
+    }
   }
 
   .description {
     grid-area: 2 / 1 / 3 / 2;
+    text-align: center;
+
+    h1 {
+      padding: 20px 0;
+    }
+
+    .description-content-img {
+      width: 100%;
+      padding: 50px 20px 50px 60px;
+    }
+
+    ul {
+      text-align: left;
+      margin-top: 50px;
+
+      li {
+        a {
+          color: $dark;
+        }
+      }
+    }
   }
 
   .portfolio {
     grid-area: 3 / 1 / 4 / 2;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    align-content: center;
+    justify-content: center;
+
+    color: $white;
+    text-shadow: 0 0 5px $dark;
+
+    .portfolio-small {
+      grid-column: span 1;
+      grid-row: span 1;
+      background-size: cover;
+      background-position: top;
+      background-color: rgba($dark, 0.5);
+      background-blend-mode: multiply;
+
+      h4 {
+        padding-top: 90%;
+        padding-left: 10%;
+      }
+    }
+    .portfolio-wide {
+      grid-column: span 2;
+      grid-row: span 1;
+      background-size: cover;
+      background-position: top;
+      background-color: rgba($dark, 0.5);
+      background-blend-mode: multiply;
+
+      h3 {
+        padding: 15% 20% 20px 20%;
+        font-weight: bolder;
+      }
+
+      a {
+        padding: 20px 20% 15% 20%;
+        color: $accent;
+      }
+    }
+    .portfolio-tall {
+      grid-column: span 1;
+      grid-row: span 2;
+      background-size: cover;
+      background-position: top;
+      background-color: rgba($dark, 0.5);
+      background-blend-mode: multiply;
+
+      h4 {
+        padding-top: 90%;
+        padding-left: 10%;
+      }
+    }
+
+    #portfolio-1 {
+      background-image: url('../images/demo-4-wide.jpg');
+
+      &:hover {
+        background-color: rgba($dark, 0);
+      }
+    }
+    #portfolio-2 {
+      background-image: url('../images/demo-2.jpg');
+
+      &:hover {
+        background-color: rgba($dark, 0);
+      }
+    }
+    #portfolio-3 {
+      background-image: url('../images/demo-1.jpg');
+
+      &:hover {
+        background-color: rgba($dark, 0);
+      }
+    }
+    #portfolio-4 {
+      background-image: url('../images/demo-3.jpg');
+
+      &:hover {
+        background-color: rgba($dark, 0);
+      }
+    }
+    #portfolio-5 {
+      background-image: url('../images/demo-5.jpg');
+
+      &:hover {
+        background-color: rgba($dark, 0);
+      }
+    }
+    #portfolio-6 {
+      background-image: url('../images/demo-7.jpg');
+
+      &:hover {
+        background-color: rgba($dark, 0);
+      }
+    }
+    #portfolio-7 {
+      background-image: url('../images/demo-6.jpg');
+
+      &:hover {
+        background-color: rgba($dark, 0);
+      }
+    }
+    #portfolio-8 {
+      background-image: url('../images/demo-4.jpg');
+
+      &:hover {
+        background-color: rgba($dark, 0);
+      }
+    }
+    #portfolio-9 {
+      background-image: url('../images/demo-3.jpg');
+
+      &:hover {
+        background-color: rgba($dark, 0);
+      }
+    }
   }
 
   .pricing {
